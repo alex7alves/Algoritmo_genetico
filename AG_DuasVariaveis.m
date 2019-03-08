@@ -1,5 +1,5 @@
-%Desenvolvimento de um algoritmo genético
-% Para duas variáveis 
+%Desenvolvimento de um algoritmo genÃ©tico
+% Para duas variÃ¡veis 
 %Autor : Alex Alves
 
 function m = nain()
@@ -23,14 +23,14 @@ for i=1:Numero_De_Geracoes
   %   populacao_Realx =  Valor_Populacao_Decimalx/((2^Numero_de_bits_do_Individuo)-1);     
    %  populacao_Realy =  Valor_Populacao_Decimaly/((2^Numero_de_bits_do_Individuo)-1);  
 
-     disp([num2str(i) 'ª Populaçãox =     ' num2str(Valor_Populacao_Decimalx)  'ª Populaçãoy =     ' num2str(Valor_Populacao_Decimaly)]);
-  % disp([num2str(i) 'ª População =     ' num2str( populacao_Real)]);
+     disp([num2str(i) 'Âª PopulaÃ§Ã£ox =     ' num2str(Valor_Populacao_Decimalx)  'Âª PopulaÃ§Ã£oy =     ' num2str(Valor_Populacao_Decimaly)]);
+  % disp([num2str(i) 'Âª PopulaÃ§Ã£o =     ' num2str( populacao_Real)]);
     x=Valor_Populacao_Decimalx;
     y= Valor_Populacao_Decimaly;
      Aptidao= (x.*x)+(y.*y) +(((3.*x)+ (4.*y) -26).*((3.*x)+ (4.*y) -26));
     for j=1:2:(Tamanho_Da_Populacao)
         
-        %Seleção Por Torneio     
+        %SeleÃ§Ã£o Por Torneio     
            Escolhido1= Torneio( Aptidao,Tamanho_Da_Populacao);
            Escolhido2= Torneio( Aptidao,Tamanho_Da_Populacao);
      
@@ -41,17 +41,17 @@ for i=1:Numero_De_Geracoes
     
     %mutacao
     Valor_Populacao_Binariox = Mutacao(Valor_Populacao_Binariox,Numero_de_bits_do_Individuo,Tamanho_Da_Populacao,taxa_mutacao);
-     Valor_Populacao_Binarioy = Mutacao(Valor_Populacao_Binarioy,Numero_de_bits_do_Individuo,Tamanho_Da_Populacao,taxa_mutacao);
+    Valor_Populacao_Binarioy = Mutacao(Valor_Populacao_Binarioy,Numero_de_bits_do_Individuo,Tamanho_Da_Populacao,taxa_mutacao);
     [Mi,pos]= min(Aptidao);
-   Melhor_individuox(i) = Valor_Populacao_Decimalx(pos);
-   Melhor_individuoy(i) = Valor_Populacao_Decimaly(pos);
+    Melhor_individuox(i) = Valor_Populacao_Decimalx(pos);
+    Melhor_individuoy(i) = Valor_Populacao_Decimaly(pos);
   % Melhor_individuox(i) =  populacao_Realx(pos);
  % Melhor_individuoy(i) =  populacao_Realy(pos);
-  
+ 
     plot( Melhor_individuox, Melhor_individuox,'o');
 end
 
-fprintf(['\n\nPopulação Finalx = '  num2str(Valor_Populacao_Decimalx) '\n\nPopulação Finaly = '  num2str(Valor_Populacao_Decimaly) '\n\n']);
+fprintf(['\n\nPopulaÃ§Ã£o Finalx = '  num2str(Valor_Populacao_Decimalx) '\n\nPopulaÃ§Ã£o Finaly = '  num2str(Valor_Populacao_Decimaly) '\n\n']);
 end
 
 function  Valor_Populacao_Binario = Mutacao(Valor_Populacao_Binario,Numero_de_bits_do_Individuo,Tamanho_Da_Populacao,taxa_mutacao)
